@@ -1,0 +1,25 @@
+# Conexion Base de Datos
+server:
+  servlet:
+    context-path: /VitalConsult
+  port: 8088
+
+spring:
+  datasource:
+    #url: jdbc:mysql://root:UNj74pWI6Fl2HMyBzJzA@containers-us-west-109.railway.app:5652/railway
+    url: jdbc:mysql://localhost:3306/vitalconsult
+    username: root
+    password: pandaren
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+  dbcp2:
+    validation-query: select 1 from dual
